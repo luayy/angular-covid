@@ -7,7 +7,7 @@ import { DetailComponent } from './detail/detail.component';
 const routes: Routes = [
   {
     path:'login',
-    component:HomeComponent,
+    component:LoginComponent,
   },
   {
     path:'dashboard',
