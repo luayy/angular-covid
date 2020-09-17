@@ -1,9 +1,22 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpGetService {
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
+
+  getCountry(): Observable<unknown> {
+    return this.http.get('https://api.covid19api.com/all');
+  }
+
+  getUserById(id: string): Observable<unknown>{
+    return this.http.get('https://reqres.in/api/users' + id);
+  }
 }
