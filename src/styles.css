@@ -33,7 +33,7 @@ p {
   margin: -8px;
   display: flex;
   align-items: center;
-  background-color: #1976d2;
+  background-color: #57b846;
   color: white;
   font-weight: 600;
 }
@@ -97,7 +97,7 @@ p {
 }
 
 .card.highlight-card {
-  background-color: #1976d2;
+  background-color: #57b846;
   color: white;
   font-weight: 600;
   border: none;
@@ -113,12 +113,12 @@ p {
 a,
 a:visited,
 a:hover {
-  color: #1976d2;
+  color: #666666;
   text-decoration: none;
 }
 
 a:hover {
-  color: #125699;
+  color: #57b846;
 }
 
 .terminal {
