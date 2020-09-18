@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private fb:FormBuilder
+    private fb:FormBuilder, 
+    private router: Router
     ) { 
 
     }
@@ -23,6 +25,13 @@ export class LoginComponent implements OnInit {
   })
 
   submit(){
-    
+    if (
+      this.loginForm.controls['username'].value === "user" &&
+      this.loginForm.controls['password'].value === "password"
+    ) {
+      this.router.navigate(['/dashboard']);
+    } else {
+      alert("Username or Password WRONG!")
+    }
   }
 }
