@@ -1,15 +1,4 @@
-/* FONT */
 
-@font-face {
-    font-family: Poppins-Regular;
-    src: url('../../assets/fonts/poppins/Poppins-Regular.ttf'); 
-  }
-  
-  @font-face {
-    font-family: Poppins-SemiBold;
-    src: url('../../assets/fonts/poppins/Poppins-SemiBold.ttf'); 
-  }
-  
   /* Utility */
   
   h1,h2,h3,h4,h5,h6 {
@@ -65,7 +54,7 @@
   
   /* Form */
   
-  .form {
+  .container-form {
     width: 100%;
   }
 
