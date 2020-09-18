@@ -17,16 +17,18 @@ export class HomeComponent implements OnInit {
 
   arrayPage = [];
   globalData = [];
+  byCountry = []
 
   ngOnInit() {
     this.get.getCountry().subscribe((res: any) => {
       this.arrayPage = res;
-      console.log(this.arrayPage)
+      // console.log(this.arrayPage)
     });
 
     this.get.getGlobal().subscribe((res: any) => {
       this.globalData = res.Global;
-      console.log(this.globalData);
+      this.byCountry = res.Countries
+      console.log(this.byCountry);
     });
   }
 

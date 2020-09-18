@@ -45,12 +45,12 @@
 					<div class="table100-body js-pscroll">
 						<table>
 							<tbody>
-								<tr *ngFor="let item of arrayPage; index as i" class="row100 body">
+								<tr *ngFor="let item of byCountry; index as i" class="row100 body">
 									<td class="cell100 column1">{{ item.Country }}</td>
-									<td class="cell100 column2">100</td>
-									<td class="cell100 column3">2</td>
-									<td class="cell100 column4">88</td>
-									<td class="cell100 column5">21 September 2020</td>
+									<td class="cell100 column2">{{ item.NewConfirmed }}</td>
+									<td class="cell100 column3">{{ item.NewDeaths }}</td>
+									<td class="cell100 column4">{{ item.NewRecovered }}</td>
+									<td class="cell100 column5">{{ item.Date }}</td>
 								</tr>
 
 							</tbody>
