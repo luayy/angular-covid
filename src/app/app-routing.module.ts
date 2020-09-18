@@ -5,12 +5,12 @@ import { HomeComponent } from './home/home.component';
 import { DetailComponent } from './detail/detail.component';
 
 const routes: Routes = [
-  // {
-  //   path:'login',
-  //   component:HomeComponent,
-  // },
   {
-    path:'dashboard',
+    path:'login',
+    component:LoginComponent,
+  },
+  {
+    path:'',
     component:HomeComponent,
   },
   {
