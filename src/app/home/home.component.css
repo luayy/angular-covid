@@ -10,6 +10,10 @@
   right: 5px;
 }
 
+span {
+  font-family: Poppins-SemiBold;
+}
+
 .table100 .ps__rail-y::before {
   content: "";
   display: block;
@@ -131,7 +135,7 @@ th, td {
 }
 
 .table100.ver1 th {
-  font-family: Lato-Bold;
+  font-family: Poppins-SemiBold;
   font-size: 18px;
   color: #fff;
   line-height: 1.4;
@@ -140,7 +144,7 @@ th, td {
 }
 
 .table100.ver1 td {
-  font-family: Lato-Regular;
+  font-family: Poppins-Regular;
   font-size: 15px;
   color: #808080;
   line-height: 1.4;
