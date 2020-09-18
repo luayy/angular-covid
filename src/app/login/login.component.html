@@ -10,16 +10,16 @@
             <form  [formGroup]='loginForm'>
                 <div class="wrap-input-form">
                     <span class="form-title">Username</span>
-                    <input class="input-form" type="text" name="username">
+                    <input class="input-form" type="text" formControlName="username">
                 </div>
 
                 <div class="wrap-input-form">
                     <span class="form-title">Password</span>
-                    <input class="input-form" type="password" name="pass">
+                    <input class="input-form" type="password" formControlName="password">
                 </div>
 
                 <div class="container-form-btn">
-                    <button class="form-btn">
+                    <button class="form-btn" (click)="submit()">
                         Login
                     </button>
                 </div>
