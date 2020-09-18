@@ -10,18 +10,35 @@
 </div>
 
 <div class="card-container">
-  <a class="card" href="#">
-    <i class="fa fa-ambulance icon"></i>
-    <span>Meninggal Dunia</span><br>{{globalData.TotalDeaths}}
-   </a>
-  <a class="card" href="#">
-    <i class="material-icons icon">coronavirus</i>
-    <span>Terinfeksi </span><br>{{globalData.TotalConfirmed}}
-  </a>
-  <a class="card" href="#">
-    <i class="fa fa-heart icon"></i>
-    <span>Sembuh</span><br>{{globalData.TotalRecovered}}
-  </a>
+  <div class="card-dashboard">
+    <div class="info mati ">
+      <i class="fa fa-ambulance icon"></i>
+      <div>
+        <b>{{ globalData.TotalDeaths }}</b>
+        <span>Meninggal Dunia</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-dashboard">
+    <div class="info infeksi ">
+        <i class="material-icons icon">coronavirus</i>
+        <div>
+          <b>{{ globalData.TotalConfirmed }}</b>
+          <span>Terinfeksi</span>
+        </div>
+      </div>
+  </div>
+
+  <div class="card-dashboard">
+    <div class="info sembuh ">
+      <i class="fa fa-heart icon"></i>
+      <div>
+        <b>{{ globalData.TotalRecovered}}</b>
+        <span>Sembuh</span>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="limiter">

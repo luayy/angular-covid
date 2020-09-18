@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     this.get.getGlobal().subscribe((res: any) => {
       this.globalData = res.Global;
       this.byCountry = res.Countries
-      console.log(this.byCountry);
+      console.log(this.globalData);
     });
   }
 
