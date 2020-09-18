@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpGetService } from '../http-get.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
+// import { FormBuilder, FormGroup } from '@angular/forms';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private fb:FormBuilder,
+    // private fb:FormBuilder,
     private get: HttpGetService
   ) { }
 
