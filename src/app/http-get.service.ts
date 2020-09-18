@@ -13,7 +13,7 @@ export class HttpGetService {
   ) { }
 
   getCountry(): Observable<unknown> {
-    return this.http.get('https://api.covid19api.com/all');
+    return this.http.get('https://api.covid19api.com/countries');
   }
 
   getUserById(id: string): Observable<unknown>{
