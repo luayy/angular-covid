@@ -1,28 +1,29 @@
 <div class="container">
     <div class="wrap">
-        <!-- <form class="form validate-form"> -->
+        <div class="container-form">
             <span class="title">
                 Welcome
             </span>
             <span class="avatar">
                 <img src="../../assets/images/avatar-01.jpg" alt="AVATAR">
             </span>
+            <form  [formGroup]='loginForm'>
+                <div class="wrap-input-form">
+                    <span class="form-title">Username</span>
+                    <input class="input-form" type="text" name="username">
+                </div>
 
-            <div class="wrap-input-form">
-                <span class="form-title">Username</span>
-                <input class="input-form" type="text" name="username">
-            </div>
+                <div class="wrap-input-form">
+                    <span class="form-title">Password</span>
+                    <input class="input-form" type="password" name="pass">
+                </div>
 
-            <div class="wrap-input-form">
-                <span class="form-title">Password</span>
-                <input class="input-form" type="password" name="pass">
-            </div>
-
-            <div class="container-form-btn">
-                <button class="form-btn">
-                    Login
-                </button>
-            </div>
+                <div class="container-form-btn">
+                    <button class="form-btn">
+                        Login
+                    </button>
+                </div>
+            </form>
 
             <ul class="desc">
                 <li class="">
@@ -45,6 +46,6 @@
                     </a>
                 </li>
             </ul>
-        <!-- </form> -->
+        </div>
     </div>
 </div>
