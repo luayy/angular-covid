@@ -14,7 +14,7 @@
     <div class="info mati ">
       <i class="fa fa-ambulance icon"></i>
       <div>
-        <b>{{ globalData.TotalDeaths }}</b>
+        <b>{{ globalData.TotalDeaths | number }}</b>
         <span>Meninggal Dunia</span>
       </div>
     </div>
@@ -24,7 +24,7 @@
     <div class="info infeksi ">
         <i class="material-icons icon">coronavirus</i>
         <div>
-          <b>{{ globalData.TotalConfirmed }}</b>
+          <b>{{ globalData.TotalConfirmed | number }}</b>
           <span>Terinfeksi</span>
         </div>
       </div>
@@ -34,7 +34,7 @@
     <div class="info sembuh ">
       <i class="fa fa-heart icon"></i>
       <div>
-        <b>{{ globalData.TotalRecovered}}</b>
+        <b>{{ globalData.TotalRecovered | number}}</b>
         <span>Sembuh</span>
       </div>
     </div>
