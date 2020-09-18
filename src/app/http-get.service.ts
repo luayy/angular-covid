@@ -12,6 +12,10 @@ export class HttpGetService {
     private http: HttpClient
   ) { }
 
+  getGlobal(): Observable<unknown> {
+    return this.http.get('https://api.covid19api.com/summary');
+  }
+
   getCountry(): Observable<unknown> {
     return this.http.get('https://api.covid19api.com/countries');
   }
