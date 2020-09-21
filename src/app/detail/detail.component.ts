@@ -15,6 +15,7 @@ export class DetailComponent implements OnInit {
   ctx: any;
   country: string;
 
+
   i: string;             // variabel untuk ambil param
   testArray = [];
   datasetD = [];
@@ -75,6 +76,32 @@ export class DetailComponent implements OnInit {
                       'rgba(255, 206, 86, 1)'
                   ],
                   borderWidth: 1
+              }]
+          },
+          options: {
+            responsive: false
+          }
+        });
+
+        // 
+        this.canvas = document.getElementById('lineChart');
+        this.ctx = this.canvas.getContext('2d');
+
+        let lineChart = new Chart(this.ctx, {
+          type: 'line',
+          data: {
+              labels: [],
+              datasets: [{
+                  label: '# of Votes',
+                  data: [this.testArray[1].Recovered,this.testArray[1].Confirmed,this.testArray[1].Deaths],
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 1)',
+                      // 'rgba(54, 162, 235, 1)',
+                      // 'rgba(255, 206, 86, 1)'
+                  ],
+                  fill: false,
+                  borderColor: 'rgba(255, 99, 132, 1)',
+                  borderWidth: 3
               }]
           },
           options: {
