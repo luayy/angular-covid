@@ -1,36 +1,3 @@
-// import { Component, OnInit } from '@angular/core';
-// import {ActivatedRoute} from '@angular/router';
-// import { HttpGetService } from '../http-get.service';
-
-// @Component({
-//   selector: 'app-detail',
-//   templateUrl: './detail.component.html',
-//   styleUrls: ['./detail.component.css']
-// })
-
-// export class DetailComponent implements OnInit {
-//   i: string;
-//   testArray = [];
-
-//   constructor(
-//     private route: ActivatedRoute,
-//     private get: HttpGetService
-//   ) { }
-
-//   ngOnInit() {
-//     this.route.queryParams.subscribe(params => {
-//       this.i = params['item'];
-
-//       this.get.getDetail(this.i).subscribe((res: any) => {
-//         this.testArray = res;
-//       });
-//     });
-//   }
-
-// }
-
-
-
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import { HttpGetService } from '../http-get.service';
@@ -46,10 +13,10 @@ export class DetailComponent implements OnInit {
   title = 'Detail Kasus Covid-19';
   canvas: any;
   ctx: any;
+  country: string;
 
-  i: string;
+  i: string;             // variabel untuk ambil param
   testArray = [];
-  // newestData = [20, 90];
   datasetD = [];
 
   constructor(
@@ -59,14 +26,16 @@ export class DetailComponent implements OnInit {
 
   ngOnInit() {
 
+    // ambil data api hari ini, disajikan dalam bentuk chart
     this.route.queryParams.subscribe(params => {
       this.i = params['item'];
 
       this.get.getDetail(this.i).subscribe((res: any) => {
         this.testArray = res;
+        
+        this.country = this.testArray[0].Country      // ambil data negara untuk ditampilkan
+
         this.datasetD.push(this.testArray.reverse());
-        // this.newestData = this.testArray.slice(0,2);
-        // console.log(this.testArray[0].Deaths);
         this.canvas = document.getElementById('myChart');
         this.ctx = this.canvas.getContext('2d');
         let myChart = new Chart(this.ctx, {
@@ -88,6 +57,9 @@ export class DetailComponent implements OnInit {
             responsive: false
           }
         });
+
+
+        // info Covid kemarin
         this.canvas = document.getElementById('myChartYesterday');
         this.ctx = this.canvas.getContext('2d');
         let myChartYesterday = new Chart(this.ctx, {
@@ -111,7 +83,6 @@ export class DetailComponent implements OnInit {
         });
 
       });
-      // console.log(this.testArray);
     });
 
   }

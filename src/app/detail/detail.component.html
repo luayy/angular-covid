@@ -25,8 +25,25 @@
 
 
 
+<!-- ====== toolbar ============ -->
+<div class="toolbar" role="banner">
+    <i class="material-icons md-52">medical_services</i>
+    <span> Covid Global Report</span>
+    <div class="spacer"></div>
+    <div class="float-right" style="font-family: Poppins-Regular;">
+        Selamat Datang, <b>User 1</b>
+    </div>
+    <i class="material-icons md-48">more_vert</i>
+</div>
 
- <canvas id="myChart" width="700" height="400"></canvas>
- <div style="margin: 700;">
-    <canvas id="myChartYesterday" width="700" height="400"></canvas>
- </div>
+
+<!-- ======= chart today ========= -->
+<div class="content">
+    Kasus COVID-19 hari ini di {{ country }}
+    <canvas id="myChart" width="400" height="400"></canvas>
+    
+    <!-- ======= chart yesterday ========= -->
+    Data kasus COVID-19 kemarin di {{ country }}
+    <canvas id="myChartYesterday" width="400" height="400"></canvas>
+</div>
+ 
