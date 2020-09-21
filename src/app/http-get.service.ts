@@ -20,6 +20,10 @@ export class HttpGetService {
     return this.http.get('https://api.covid19api.com/countries');
   }
 
+  getDetail(item: string): Observable<unknown>{
+    return this.http.get('https://api.covid19api.com/dayone/country/' + item);
+  }
+
   getUserById(id: string): Observable<unknown>{
     return this.http.get('https://reqres.in/api/users' + id);
   }

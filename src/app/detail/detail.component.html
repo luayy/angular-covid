@@ -1,1 +1,23 @@
 <p>detail works!</p>
+
+<table id="color" class="table table-hover full-width">
+    <thead>
+        <tr>
+            <th>Negara</th>
+            <th>Kematian</th>
+            <th>Sembuh</th>
+            <th>Aktif</th>
+            <th>Terkonfirmasi</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let item of testArray; index as i">
+        <td>{{ item.Country }}</td>
+        <td>{{ item.Deaths }}</td>
+        <td>{{ item.Recovered }}</td>
+        <td>{{ item.Active }}</td>
+        <td>{{ item.Confirmed }}</td>
+        </tr>
+    </tbody>
+</table>

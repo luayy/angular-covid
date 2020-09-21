@@ -55,7 +55,7 @@
   </thead>
 
   <tbody>
-    <tr *ngFor="let item of byCountry; index as i">
+    <tr *ngFor="let item of byCountry; index as i" routerLink="detail/{{i}}" [queryParams]="{item:item.Slug}">
       <td>{{ item.Country }}</td>
       <td>{{ item.NewConfirmed }}</td>
       <td>{{ item.NewDeaths }}</td>
