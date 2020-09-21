@@ -43,12 +43,14 @@ import * as Chart from 'chart.js'
 })
 
 export class DetailComponent implements OnInit {
-  title = 'angular8chartjs';
+  title = 'Detail Kasus Covid-19';
   canvas: any;
   ctx: any;
 
   i: string;
   testArray = [];
+  // newestData = [20, 90];
+  datasetD = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -62,18 +64,27 @@ export class DetailComponent implements OnInit {
       
       this.get.getDetail(this.i).subscribe((res: any) => {
         this.testArray = res;
+        this.testArray = this.testArray.reverse()
+        // this.newestData = this.testArray.slice(0,2);
+        // console.log(this.testArray[0].Deaths);
+        // for(var i = 0; i < 2; i++){
+        //   this.datasetD.push(this.testArray[i].Deaths)
+        // }
+    
       });
     });  
+
+    console.log(this.testArray);
 
     this.canvas = document.getElementById('myChart');
     this.ctx = this.canvas.getContext('2d');
     let myChart = new Chart(this.ctx, {
-      type: 'line',
+      type: 'pie',
       data: {
           labels: ["Sembuh", "Positif", "Meninggal"],
           datasets: [{
               label: '# of Votes',
-              data: [1,2,3],
+              data: [10,20,30],
               backgroundColor: [
                   'rgba(255, 99, 132, 1)',
                   'rgba(54, 162, 235, 1)',
