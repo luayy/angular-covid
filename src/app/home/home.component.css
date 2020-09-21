@@ -1,3 +1,43 @@
+/* ====== card ======== */
+.card-container {
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
+  margin-left: 80px;
+}
+
+.card-dashboard{
+  float: left;
+  margin-left: 60px;
+  width: 25%;
+}
+
+.info.left div{
+  float:left;
+  text-align:left;
+}
+
+.info.infeksi{
+  background: rgb(243, 156, 18);
+  color:white;
+}
+
+.info.sembuh{
+  background: rgb(39, 174, 96);
+  color:white;
+}
+
+.info.mati{
+  background: rgb(192, 57, 43);
+  color:white;
+}
+
+
+
+
+
+
+
 .js-pscroll {
   position: relative;
   overflow: hidden;
@@ -176,19 +216,6 @@ th, td {
   background-color: #cccccc;
 }
 
-.card-container {
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 16px;
-  margin-left: 80px;
-}
-
-.card-dashboard{
-  float: left;
-  margin-left: 60px;
-  width: 25%;
-}
-
 .info{
   background: #fff;
   height: 6em;
@@ -230,20 +257,4 @@ th, td {
   display: block;
 }
 
-.info.left div{
-  float:left;
-  text-align:left;
-}
 
-.info.infeksi{
-  background: rgb(243, 156, 18);
-  color:white;
-}
-.info.sembuh{
-  background: rgb(39, 174, 96);
-  color:white;
-}
-.info.mati{
-  background: rgb(192, 57, 43);
-  color:white;
-}
