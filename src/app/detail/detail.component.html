@@ -1,30 +1,3 @@
-<!-- <p>detail works!</p>
-
-<table id="color" class="table table-hover full-width">
-    <thead>
-        <tr>
-            <th>Negara</th>
-            <th>Kematian</th>
-            <th>Sembuh</th>
-            <th>Aktif</th>
-            <th>Terkonfirmasi</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <tr *ngFor="let item of testArray; index as i">
-        <td>{{ item.Country }}</td>
-        <td>{{ item.Deaths }}</td>
-        <td>{{ item.Recovered }}</td>
-        <td>{{ item.Active }}</td>
-        <td>{{ item.Confirmed }}</td>
-        </tr>
-    </tbody>
-</table>
- -->
-
-
-
 <!-- ====== toolbar ============ -->
 <div class="toolbar" role="banner">
     <i class="material-icons md-52">medical_services</i>
@@ -37,8 +10,8 @@
 </div>
 
 
-<!-- ======= chart today ========= -->
 <div class="content">
+    <!-- ======= chart today ========= -->
     Kasus COVID-19 hari ini di {{ country }}
     <canvas id="myChart" width="400" height="400"></canvas>
     
