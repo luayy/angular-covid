@@ -1,6 +1,6 @@
+<!-- ====== toolbar ============ -->
 <div class="toolbar" role="banner">
     <i class="material-icons md-52">medical_services</i>
-
     <span> Covid Global Report</span>
     <div class="spacer"></div>
     <div class="float-right" style="font-family: Poppins-Regular;">
@@ -9,6 +9,7 @@
     <i class="material-icons md-48">more_vert</i>
 </div>
 
+<!-- ======== card info ========= -->
 <div class="card-container">
   <div class="card-dashboard">
     <div class="info mati">
@@ -21,7 +22,7 @@
   </div>
 
   <div class="card-dashboard">
-    <div class="info infeksi ">
+    <div class="info infeksi">
         <i class="material-icons icon">coronavirus</i>
         <div>
           <b>{{ globalData.TotalConfirmed | number }}</b>
@@ -31,7 +32,7 @@
   </div>
 
   <div class="card-dashboard">
-    <div class="info sembuh ">
+    <div class="info sembuh">
       <i class="fa fa-heart icon"></i>
       <div>
         <b>{{ globalData.TotalRecovered | number}}</b>
@@ -41,40 +42,25 @@
   </div>
 </div>
 
-<div class="limiter">
-		<div class="container-table100">
-			<div class="wrap-table100">
-				<div class="table100 ver1 m-b-110">
-					<div class="table100-head">
-						<table>
-							<thead>
-								<tr class="row100 head">
-									<th class="cell100 column1">Negara</th>
-									<th class="cell100 column2">Terinfeksi</th>
-									<th class="cell100 column3">Meninggal</th>
-									<th class="cell100 column4">Sembuh</th>
-									<th class="cell100 column5">Tanggal</th>
-								</tr>
-							</thead>
-						</table>
-					</div>
+<!-- ======== table data ======== -->
+<table id="color" class="table table-hover full-width">
+  <thead>
+    <tr>
+        <th>Negara</th>
+        <th>Terinfeksi</th>
+        <th>Sembuh</th>
+        <th>Meninggal</th>
+        <!-- <th></th> -->
+    </tr>
+  </thead>
 
-					<div class="table100-body js-pscroll">
-						<table>
-							<tbody>
-								<tr *ngFor="let item of byCountry; index as i" class="row100 body">
-									<td class="cell100 column1">{{ item.Country }}</td>
-									<td class="cell100 column2">{{ item.NewConfirmed }}</td>
-									<td class="cell100 column3">{{ item.NewDeaths }}</td>
-									<td class="cell100 column4">{{ item.NewRecovered }}</td>
-									<td class="cell100 column5">{{ item.Date }}</td>
-								</tr>
-
-							</tbody>
-						</table>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
+  <tbody>
+    <tr *ngFor="let item of byCountry; index as i">
+      <td>{{ item.Country }}</td>
+      <td>{{ item.NewConfirmed }}</td>
+      <td>{{ item.NewDeaths }}</td>
+      <td>{{ item.NewRecovered }}</td>
+      <!-- <td>{{ item.Date }}</td> -->
+    </tr>
+  </tbody>
+</table>
