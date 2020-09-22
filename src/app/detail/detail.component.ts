@@ -49,9 +49,9 @@ export class DetailComponent implements OnInit {
                   label: '# of Votes',
                   data: [this.testArray[0].Recovered,this.testArray[0].Confirmed,this.testArray[0].Deaths],
                   backgroundColor: [
-                      'rgba(255, 99, 132, 1)',
                       'rgba(54, 162, 235, 1)',
-                      'rgba(255, 206, 86, 1)'
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(255, 99, 132, 1)'
                   ],
                   borderWidth: 1
               }]
@@ -73,9 +73,9 @@ export class DetailComponent implements OnInit {
                   label: '# of Votes',
                   data: [this.testArray[1].Recovered,this.testArray[1].Confirmed,this.testArray[1].Deaths],
                   backgroundColor: [
-                      'rgba(255, 99, 132, 1)',
-                      'rgba(54, 162, 235, 1)',
-                      'rgba(255, 206, 86, 1)'
+                      'rgba(76, 175, 80,1.0)',
+                      'rgba(255, 87, 34,1.0)',
+                      'rgba(158, 158, 158,1.0)'
                   ],
                   borderWidth: 1
               }]
@@ -104,15 +104,15 @@ export class DetailComponent implements OnInit {
           data: {
               labels: this.LabelResult,
               datasets: [{
-                  label: 'Deaths',
+                  label: 'Angka kematian',
                   data: this.DeathResult,
                   backgroundColor: [
-                      'rgba(255, 99, 132, 1)',
+                      'rgba(0, 230, 34, 1)',
                       // 'rgba(54, 162, 235, 1)',
                       // 'rgba(255, 206, 86, 1)'
                   ],
                   fill: false,
-                  borderColor: 'rgba(255, 99, 132, 1)',
+                  borderColor: 'rgba(0, 230, 34, 1)',
                   borderWidth: 3
               }]
           },
