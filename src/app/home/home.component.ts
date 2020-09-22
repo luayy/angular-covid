@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpGetService } from '../http-get.service';
+import { Router } from '@angular/router';
 // import { FormBuilder, FormGroup } from '@angular/forms';
 
 
@@ -12,7 +13,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     // private fb:FormBuilder,
-    private get: HttpGetService
+    private get: HttpGetService, 
+    private router: Router
   ) { }
 
   arrayPage = [];
@@ -31,5 +33,9 @@ export class HomeComponent implements OnInit {
       console.log(this.globalData);
     });
   }
+  logout(){
+    this.router.navigate(['/login']);
+  }
+
 
 }

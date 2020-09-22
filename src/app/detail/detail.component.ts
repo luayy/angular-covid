@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import { HttpGetService } from '../http-get.service';
 import * as Chart from 'chart.js'
 
@@ -22,7 +22,8 @@ export class DetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private get: HttpGetService
+    private get: HttpGetService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -112,5 +113,9 @@ export class DetailComponent implements OnInit {
       });
     });
 
+  }
+
+  logout(){
+    this.router.navigate(['/login']);
   }
 }
