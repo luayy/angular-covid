@@ -15,10 +15,11 @@ export class DetailComponent implements OnInit {
   ctx: any;
   country: string;
 
-
   i: string;             // variabel untuk ambil param
   testArray = [];
   datasetD = [];
+  LabelResult = [];
+  DeathResult = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -84,17 +85,27 @@ export class DetailComponent implements OnInit {
           }
         });
 
-        // 
+        // prepare data untuk grafik line
+        var count = this.testArray.length;
+        var counter = 0;
+        while(count > 0) {
+            this.LabelResult[counter] = this.testArray[counter].Date;
+            this.DeathResult[counter] = this.testArray[counter].Deaths;
+            counter++;
+            count --;
+        }
+
+        // info covid dalam bentuk line chart
         this.canvas = document.getElementById('lineChart');
         this.ctx = this.canvas.getContext('2d');
 
         let lineChart = new Chart(this.ctx, {
           type: 'line',
           data: {
-              labels: [],
+              labels: this.LabelResult,
               datasets: [{
-                  label: '# of Votes',
-                  data: [this.testArray[1].Recovered,this.testArray[1].Confirmed,this.testArray[1].Deaths],
+                  label: 'Deaths',
+                  data: this.DeathResult,
                   backgroundColor: [
                       'rgba(255, 99, 132, 1)',
                       // 'rgba(54, 162, 235, 1)',
@@ -115,6 +126,9 @@ export class DetailComponent implements OnInit {
 
   }
 
+  dashboard(){
+    this.router.navigate(['/dashboard']);
+  }
   logout(){
     this.router.navigate(['/login']);
   }

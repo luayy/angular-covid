@@ -1,7 +1,7 @@
 <!-- ====== toolbar ============ -->
 <div class="toolbar" role="banner">
-    <i class="material-icons md-52">medical_services</i>
-    <span> Covid Global Report</span>
+    <i class="material-icons md-52" (click)="dashboard()">medical_services</i>
+    <span>Covid Global Report</span>
     <div class="spacer"></div>
     <div class="float-right" style="font-family: Poppins-Regular;">
         Selamat Datang, <b>User 1</b>
@@ -21,6 +21,6 @@
 
     <!-- ======= chart line ========= -->
     Grafik kasus COVID-19 di {{ country }}
-    <canvas id="lineChart" width="400" height="400"></canvas>
+    <canvas id="lineChart" width="800" height="400"></canvas>
 </div>
  
