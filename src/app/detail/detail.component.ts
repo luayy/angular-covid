@@ -20,6 +20,8 @@ export class DetailComponent implements OnInit {
   datasetD = [];
   LabelResult = [];
   DeathResult = [];
+  RecoverResult = [];
+  ConfirmResult = [];
 
   constructor(
     private route: ActivatedRoute,
@@ -91,9 +93,15 @@ export class DetailComponent implements OnInit {
         while(count > 0) {
             this.LabelResult[counter] = this.testArray[counter].Date;
             this.DeathResult[counter] = this.testArray[counter].Deaths;
+            this.RecoverResult[counter] = this.testArray[counter].Recovered;
+            this.ConfirmResult[counter] = this.testArray[counter].Confirmed;
             counter++;
             count --;
         }
+        this.LabelResult = this.LabelResult.reverse();
+        this.DeathResult = this.DeathResult.reverse();
+        this.RecoverResult = this.RecoverResult.reverse();
+        this.ConfirmResult = this.RecoverResult.reverse();
 
         // info covid dalam bentuk line chart
         this.canvas = document.getElementById('lineChart');
@@ -112,9 +120,31 @@ export class DetailComponent implements OnInit {
                       // 'rgba(255, 206, 86, 1)'
                   ],
                   fill: false,
-                  borderColor: 'rgba(0, 230, 34, 1)',
+                  borderColor: 'rgba(0, 227, 63, 48)',
                   borderWidth: 3
-              }]
+              },{
+                label: 'Angka kesembuhan',
+                data: this.RecoverResult,
+                backgroundColor: [
+                    'rgba(0, 230, 34, 1)',
+                    // 'rgba(54, 162, 235, 1)',
+                    // 'rgba(255, 206, 86, 1)'
+                ],
+                fill: false,
+                borderColor: 'rgba(0, 52, 235, 67)',
+                borderWidth: 3
+            },{
+              label: 'Angka terinfeksi',
+              data: this.ConfirmResult,
+              backgroundColor: [
+                  'rgba(0, 230, 34, 1)',
+                  // 'rgba(54, 162, 235, 1)',
+                  // 'rgba(255, 206, 86, 1)'
+              ],
+              fill: false,
+              borderColor: 'rgba(0, 230, 200, 50 )',
+              borderWidth: 3
+          }]
           },
           options: {
             responsive: false
